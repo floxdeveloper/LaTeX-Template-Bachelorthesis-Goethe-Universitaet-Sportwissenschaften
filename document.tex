@@ -9,6 +9,8 @@
 \usepackage{siunitx}
 \usepackage{titlesec}
 \usepackage{setspace}
+\usepackage[titles]{tocloft}
+
 
 %Settings
 %Change depth of section numbers (1.1.1.1)
@@ -40,7 +42,10 @@
 
 %Table of content settings
 \setcounter{tocdepth}{4}
-
+\renewcommand{\cftchapfont}{\normalfont}% titles in bold
+\renewcommand{\cftchappagefont}{\normalfont}% page numbers in bold
+\renewcommand{\cftdotsep}{1}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftsecdotsep}}% dot leaders in bold
 
 % Attributes for title page
 \title{Titel der Thesis/Hausarbeit}
