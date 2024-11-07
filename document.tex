@@ -23,6 +23,9 @@
 \begin{document}
 	%Title Page
 	\include{ads/titlepage}
+	%Set pagenumbering to Roman style and start with number II for lists
+	\pagenumbering{Roman}
+	\setcounter{page}{2}
 	%Table of contents
 	\tableofcontents
 	\newpage
@@ -32,4 +35,7 @@
 	%List of tables
 	\listoftables
 	\newpage
+	
+	%Set pagenumbering to arabic style for content
+	\pagenumbering{arabic}
 \end{document}          
