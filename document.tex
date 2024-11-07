@@ -7,6 +7,7 @@
 \usepackage{amsmath}
 \usepackage{hyperref}
 \usepackage{siunitx}
+\usepackage{titlesec}
 
 %Settings
 %Hyphenation for special words
@@ -35,6 +36,10 @@
 	%List of tables
 	\listoftables
 	\newpage
+	
+	%Change chapter style
+	\titleformat{\chapter}[hang] 
+	{\normalfont\Large\bfseries}{\thechapter}{1em}{} 
 	
 	%Set pagenumbering to arabic style for content
 	\pagenumbering{arabic}
