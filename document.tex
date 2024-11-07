@@ -9,11 +9,24 @@
 \usepackage{siunitx}
 \usepackage{titlesec}
 
+
 %Settings
 %Hyphenation for special words
 \hyphenation{Mathe-matik wieder-gewinnen}
 %Path to images
 \graphicspath{ {images/} }
+%Change fontsize according to Word template
+\makeatletter %only needed in preamble
+\renewcommand\Large{\@setfontsize\Huge{26pt}{39}}
+\renewcommand\Large{\@setfontsize\Large{14pt}{21}}
+\renewcommand\Large{\@setfontsize\large{13pt}{19.5}}
+\makeatother
+
+\titleformat*{\section}{\large\bfseries\normalfont}
+\titleformat*{\subsection}{\normalsize\bfseries\normalfont}
+\titleformat*{\subsubsection}{\normalsize\bfseries\normalfont}
+\titleformat*{\paragraph}{\normalsize\bfseries\normalfont}
+\titleformat*{\subparagraph}{\normalsize\bfseries\normalfont}
 
 % Attributes for title page
 \title{Titel der Thesis/Hausarbeit}
@@ -27,6 +40,9 @@
 	%Set pagenumbering to Roman style and start with number II for lists
 	\pagenumbering{Roman}
 	\setcounter{page}{2}
+	%Change chapter style
+	\titleformat{\chapter}[hang] 
+	{\normalfont\Large\bfseries}{\thechapter}{1em}{}
 	%Table of contents
 	\tableofcontents
 	\newpage
