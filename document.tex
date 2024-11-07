@@ -11,6 +11,7 @@
 \usepackage{setspace}
 \usepackage[titles]{tocloft}
 \usepackage{multirow}
+\usepackage[style=apa, sortcites, url=true]{biblatex}
 
 
 %Settings
@@ -48,6 +49,9 @@
 \renewcommand{\cftdotsep}{1}
 \renewcommand{\cftchapleader}{\cftdotfill{\cftsecdotsep}}% dot leaders in bold
 
+%References
+\addbibresource{sample.bib}
+
 % Attributes for title page
 \title{Titel der Thesis/Hausarbeit}
 \author{Hans Student}
@@ -77,4 +81,6 @@
 	\include{ergebnisse}
 	\include{diskussion}
 	\include{zusammenfassung}
+	%References
+	\printbibliography[title=Literaturverzeichnis]
 \end{document}          
