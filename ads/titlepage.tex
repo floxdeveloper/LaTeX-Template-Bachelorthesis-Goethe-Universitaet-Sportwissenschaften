@@ -1,4 +1,5 @@
 % Title Page
+\makeatletter
 \begin{titlepage}
 	\centering
 	Johann Wolfgang Goethe-Universität Frankfurt am Main
@@ -13,12 +14,19 @@
 	
 	Dozent/Betreuer: Prof. Dr. Peter Mustermann
 	
+	\vspace{3cm}
+	
+	{\LARGE\@title \par}
+	
 	\vfill
 	
-	\begin{flushleft}
-		Hans Student, BA, 5 \\ 
-		Matrikel-Nr.: 999999 \\ 
-		musterstudent@stud.uni-frankfurt.de \\ 
-		Frankfurt, den 31. Oktober 2016
-	\end{flushleft}
+	\@author
+	
+	BA, 5
+	 
+	Matrikel-Nr.: 999999
+	
+	musterstudent@stud.uni-frankfurt.de
+	
+	Frankfurt, den \@date
 \end{titlepage}
