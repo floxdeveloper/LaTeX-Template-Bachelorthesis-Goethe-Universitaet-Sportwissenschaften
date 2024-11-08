@@ -12,6 +12,7 @@
 \usepackage[titles]{tocloft}
 \usepackage{multirow}
 \usepackage[style=apa, sortcites, url=true]{biblatex}
+\usepackage{fancyhdr}
 
 
 %Settings
@@ -60,6 +61,13 @@
 %References
 \addbibresource{sample.bib}
 
+%Pagestlye
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+\fancyhead[L]{\leftmark}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter \ #1}{}}
+
 % Attributes for title page
 \title{Titel der Thesis/Hausarbeit}
 \author{Hans Student}
@@ -73,6 +81,10 @@
 	%Set pagenumbering to Roman style and start with number II for lists
 	\pagenumbering{Roman}
 	\setcounter{page}{2}
+	\fancypagestyle{plain}{%
+		\fancyhead[R]{\thepage}
+		\fancyhead[L]{\leftmark}
+	}
 	%Table of contents
 	\tableofcontents
 	\newpage
