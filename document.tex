@@ -1,0 +1,114 @@
+\documentclass[a4paper, 12pt]{report}
+%Packages
+%Set page style settings
+\usepackage[left=3cm, right=3cm, top=3cm, bottom=3cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{hyphenat}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[hidelinks]{hyperref}
+\usepackage{siunitx}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage[titles]{tocloft}
+\usepackage{multirow}
+\usepackage[style=apa, sortcites, url=true]{biblatex}
+\usepackage{fancyhdr}
+
+%Set font to Times
+\usepackage{mathptmx}
+
+%Settings
+%Change depth of section numbers (1.1.1.1)
+\setcounter{secnumdepth}{4}
+%Hyphenation for special words
+\hyphenation{Mathe-matik wieder-gewinnen}
+%Path to images
+\graphicspath{ {images/} }
+%Change fontsize according to Word template
+\makeatletter %only needed in preamble
+\renewcommand\Huge{\@setfontsize\Huge{26pt}{39}}
+\renewcommand\Large{\@setfontsize\Large{14pt}{21}}
+\renewcommand\large{\@setfontsize\large{13pt}{19.5}}
+\makeatother
+
+%Change chapter and section styles
+\titleformat{\chapter}[hang] 
+{\Large\bfseries}{\thechapter}{1em}{}
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\normalsize\bfseries}
+\titleformat*{\subsubsection}{\normalsize\bfseries\itshape}
+\titleformat*{\paragraph}{\normalsize\bfseries}
+\titleformat*{\subparagraph}{\normalsize\bfseries}
+%Set spacing for headings
+\titlespacing*{\chapter}{0pt}{0cm}{18pt}
+%Set spacing
+\onehalfspacing
+
+%Table of content settings
+\setcounter{tocdepth}{4}
+\renewcommand{\cftchapfont}{\normalfont}% titles in bold
+\renewcommand{\cftchappagefont}{\normalfont}% page numbers in bold
+\renewcommand{\cftdotsep}{1}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftsecdotsep}}% dot leaders in bold
+
+%List of figures settings
+\renewcommand{\cftfigpresnum}{Abbildung }
+\setlength{\cftfignumwidth}{7em}
+
+%list of tables settings
+\renewcommand{\cfttabpresnum}{Tabelle }
+\setlength{\cfttabnumwidth}{7em}
+
+%References
+\addbibresource{sample.bib}
+
+%Pagestlye
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+\fancyhead[L]{\leftmark}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter \ #1}{}}
+
+% Attributes for title page
+\title{Titel der Thesis/Hausarbeit}
+\author{Hans Student}
+%Uncomment, if you want to set specific date, not today
+%\date{31. Oktober 2016}
+
+
+\begin{document}
+	%Title Page
+	\include{ads/titlepage}
+	%Set pagenumbering to Roman style and start with number II for lists
+	\pagenumbering{Roman}
+	\setcounter{page}{2}
+	\fancypagestyle{plain}{%
+		\fancyhead[R]{\thepage}
+		\fancyhead[L]{\leftmark}
+	}
+	%Table of contents
+	\tableofcontents
+	\newpage
+	%List of figures
+	\listoffigures
+	\newpage
+	%List of tables
+	\listoftables
+	\newpage	
+	%Set pagenumbering to arabic style for content
+	\pagenumbering{arabic}
+	%Add includes for chapters
+	\include{problemstellung}
+	\include{methoden}
+	\include{ergebnisse}
+	\include{diskussion}
+	\include{zusammenfassung}
+	%References
+	\printbibliography[title=Literaturverzeichnis, heading=bibintoc]
+	%Appendix
+	\include{anhang}
+	%Declaration
+	\include{erklaerung}
+\end{document}          
