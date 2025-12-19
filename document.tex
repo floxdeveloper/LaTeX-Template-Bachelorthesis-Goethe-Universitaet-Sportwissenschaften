@@ -4,22 +4,30 @@
 \usepackage[left=3cm, right=3cm, top=3cm, bottom=3cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
+\usepackage{csquotes}
 \usepackage{hyphenat}
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage[hidelinks]{hyperref}
-\usepackage{siunitx}
+\usepackage[locale=DE]{siunitx}
 \usepackage{titlesec}
 \usepackage{setspace}
 \usepackage[titles]{tocloft}
 \usepackage{multirow}
-\usepackage[style=apa, sortcites, url=true]{biblatex}
-\usepackage{csquotes}
+\usepackage[backend=biber, style=apa, sortcites, url=true]{biblatex}
+\usepackage{url}
 \usepackage{fancyhdr}
 \usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{easyReview}
+\usepackage{caption}
+\usepackage{nicefrac}
+\usepackage{pdfpages}
 
 %Set font to Times
 \usepackage{mathptmx}
+
+\setlength{\emergencystretch}{1em}
 
 %Settings
 %Change depth of section numbers (1.1.1.1)
@@ -47,6 +55,8 @@
 \titlespacing*{\chapter}{0pt}{0cm}{18pt}
 %Set spacing
 \onehalfspacing
+%No indent for new paragraphs
+\setlength{\parindent}{0pt}
 
 %Table of content settings
 \setcounter{tocdepth}{4}
@@ -72,6 +82,27 @@
 \fancyhead[R]{\thepage}
 \fancyhead[L]{\leftmark}
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter \ #1}{}}
+
+%captionstyle
+\captionsetup{
+	font={it,footnotesize, stretch=1.2},                
+	justification=justified,    
+	singlelinecheck=false,       
+	skip=12pt,                   
+	belowskip=12pt,               
+	aboveskip=6pt,              
+	format=hang,
+	%indention=2.4cm
+}
+
+% Hurenkinder und Schusterjungen verhindern
+\clubpenalty10000
+\widowpenalty10000
+\displaywidowpenalty=10000
+
+% Settings for URL breaks
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
 
 % Attributes for title page
 \title{Titel der Thesis/Hausarbeit}
